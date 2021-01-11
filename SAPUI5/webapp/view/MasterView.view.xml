@@ -1,0 +1,26 @@
+<mvc:View controllerName="com.application1.controller.MasterView" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form">
+	<App id="masterpage">
+		<pages>
+			<Page title="Display Order Details">
+				<content>
+					<List items="{MyOrders>/DLSet}" itemPress="onListItemPress" mode="SingleSelectMaster" id="idList">
+						<items>
+							<StandardListItem title="{MyOrders>orderNo}" description="{MyOrders>ItemNo}" type="Active" />
+						</items>
+						<headerToolbar>
+							<OverflowToolbar height="12rem">
+								<VBox width="100%">
+									<DateTimePicker id="fromDTP" placeholder="Enter From Date Time" change="fromDataTimeChange" width="100%"/>
+									<DateTimePicker id="toDTP" placeholder="Enter To Date Time" change="toDataTimeChange" width="100%"/>
+									<Button text="Get Details" press="onPressButton" icon="sap-icon://process" width="100%"/>
+									<SearchField liveChange="onMasterSearch" width="100%"/>
+								</VBox>
+							</OverflowToolbar>
+						</headerToolbar>
+					</List>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
